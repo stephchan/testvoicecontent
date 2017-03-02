@@ -177,13 +177,14 @@ app.post('/', function (req, res) {
       let speechCallback = sayWeather;
       let userId = assistant.getUser().user_id;
 
+      getWeather(zipcode);
       // Save [User ID]:[{location>: <data>}] to Firebase
       // Note: Users can reset User ID at any time.
-      firebaseAdmin.database().ref('users/' + userId).update({
+      /*firebaseAdmin.database().ref('users/' + userId).update({
         [firebaseKey]: zipcode
-      });
+      });*/
 
-      getWeather(zipcode);
+
     } else {
       // Response shows that user did not grant permission
       assistant.tell(`<speak>Wow! <break time="1s"/> Poncho \
