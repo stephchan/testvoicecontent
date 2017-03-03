@@ -154,7 +154,7 @@ app.post('/', function (req, res) {
     console.log("Forecast is: " + forecast);
     var audioFileLink = getAudioFileLink();
     let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="1s"/> ' +
-      '<audio src=' + audioFileLink + '</audio> ' + '<break time="1s"/> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' +
+      '<audio src="' + audioFileLink + '"</audio> ' + '<break time="1s"/> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' +
       forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
       assistant.tell(speechOutput);
       // snore: https://www.freesound.org/data/previews/108/108519_1338699-lq.mp3
