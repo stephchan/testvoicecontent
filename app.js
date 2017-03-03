@@ -143,8 +143,9 @@ app.post('/', function (req, res) {
 
 
   function sayWeather (forecast) {
-    let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="3s"/> ' +
-      '<audio src="https://freesound.org/data/previews/110/110011_1537422-lq.mp3"></audio> ' + '<break time="3s" /> ' + ' ohhhhhh kay ' + '<break time="3s"/> '+ 'Poncho says, ' +
+    console.log("Forecast is: " + forecast);
+    let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="1s"/> ' +
+      '<audio src="https://freesound.org/data/previews/110/110011_1537422-lq.mp3"></audio> ' + '<break time="1s" /> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' + 
       'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
       assistant.tell(speechOutput);
     /*return "<speak> Hold on, I'm contacting Poncho right now for today's weather. </speak>" +
