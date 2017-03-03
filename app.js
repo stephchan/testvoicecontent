@@ -145,7 +145,7 @@ app.post('/', function (req, res) {
   function sayWeather (forecast) {
     forecast = forecast.replace(/(\r\n|\n|\r)/gm,"");
     //forecast = forecast.replace(/[0-9]F/,)
-    //console.log("Forecast is: " + forecast);
+    console.log("Forecast is: " + forecast);
     let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="1s"/> ' +
       '<audio src="https://freesound.org/data/previews/110/110011_1537422-lq.mp3"></audio> ' + '<break time="1s" /> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' +
       forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
