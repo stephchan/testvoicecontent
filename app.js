@@ -143,7 +143,8 @@ app.post('/', function (req, res) {
 
 
   function sayWeather (forecast) {
-    //forecast = forecast.replace(/(\r\n|\n|\r)/gm," ");
+    forecast = forecast.replace(/(\r\n|\n|\r)/gm," ");
+    forecast = forecast.replace(/&(?!amp;)/g, '&amp;'​);
     //forecast = forecast.replace(/[0-9]F/,)
     console.log("Forecast is: " + forecast);
     let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="1s"/> ' +
