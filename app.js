@@ -135,7 +135,7 @@ app.post('/', function (req, res) {
             resolve();
             //resolve(assistant.tell(speechOutput));
           } else {
-            resolve(assistant.askForPermission('Hi. Poncho is a weather cat from Brooklyn He tells you the weather everyday, but he does it with a style that will make you smile. Weather without location is pretty lame.', permission));
+            resolve(assistant.askForPermission('Hi. Poncho is a weather cat from Brooklyn. He tells you the weather everyday, but he does it with a style that will make you smile. Weather without location is pretty lame.', permission));
           }
         });
     });
@@ -143,8 +143,8 @@ app.post('/', function (req, res) {
 
 
   function sayWeather (forecast) {
-    let speechOutput = '<speak>' + 'Hold on, I\'m contacting Poncho right now for today\'s weather. ' +
-      '<audio src="' + MEOW_SRC + '"></audio>' + 'ohhhhhh kayyyyy ' + '<break time="1000ms"/> '+ 'Poncho says, ' +
+    let speechOutput = '<speak>' + 'Hold on, I\'m contacting Poncho right now for today\'s weather. ' + '<break time="1000ms"/> ' +
+      '<audio src="' + MEOW_SRC + '"></audio>' + 'ohhhhhh kay ' + '<break time="1000ms"/> '+ 'Poncho says, ' +
       forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
       assistant.tell(speechOutput);
     /*return "<speak> Hold on, I'm contacting Poncho right now for today's weather. </speak>" +
