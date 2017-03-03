@@ -145,7 +145,9 @@ app.post('/', function (req, res) {
   function sayWeather (forecast) {
     let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="3s"/> ohhhhhh kay. <break time="3s"/> Poncho says, ' +
       forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.</speak>';
-      assistant.tell(speechOutput);
+      //assistant.tell(speechOutput);
+      assistant.tell('<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="3s"/> ohhhhhh kay. <break time="3s"/> Poncho says, ' +
+      forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.</speak>');
     /*return "<speak> Hold on, I'm contacting Poncho right now for today's weather. </speak>" +
     ""
     `<speak>I am reading your mind now. \
