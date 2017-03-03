@@ -178,7 +178,7 @@ app.post('/', function (req, res) {
       let firebaseKey = LOCATION_DATA;
       let speechCallback = sayWeather;
       let userId = assistant.getUser().user_id;
-      console.log("User ID is: + " userId);
+      console.log("User ID is: " + userId);
 
       getWeather(zipcode);
       // Save [User ID]:[{location>: <data>}] to Firebase
