@@ -148,11 +148,12 @@ app.post('/', function (req, res) {
     //forecast = forecast.replace(/[0-9]F/,)
     console.log("Forecast is: " + forecast);
     let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="1s"/> ' +
-      '<audio src="http://www.freesound.org/data/previews/346/346170_6146418-lq.mp3"></audio> ' + '<break time="1s"/> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' +
+      '<audio src="https://www.freesound.org/data/previews/108/108519_1338699-lq.mp3"></audio> ' + '<break time="1s"/> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' +
       forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
       assistant.tell(speechOutput);
-      //http://www.freesound.org/data/previews/108/108519_1338699-lq.mp3
+      // snore: https://www.freesound.org/data/previews/108/108519_1338699-lq.mp3
       // cat: https://freesound.org/data/previews/110/110011_1537422-lq.mp3
+      // blender: https://www.freesound.org/data/previews/346/346170_6146418-lq.mp3
     /*return "<speak> Hold on, I'm contacting Poncho right now for today's weather. </speak>" +
     ""
     `<speak>I am reading your mind now. \
