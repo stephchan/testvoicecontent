@@ -143,8 +143,8 @@ app.post('/', function (req, res) {
 
 
   function sayWeather (forecast) {
-    let speechOutput = '<speak>' + 'Hold on, I\'m contacting Poncho right now for today\'s weather.' +
-      '<audio src="' + MEOW_SRC + '"></audio>' + 'ohhhhhh kayyyyy' + '<break time="1000ms"'+ 'Poncho says, ' +
+    let speechOutput = '<speak>' + 'Hold on, I\'m contacting Poncho right now for today\'s weather. ' +
+      '<audio src="' + MEOW_SRC + '"></audio>' + 'ohhhhhh kayyyyy ' + '<break time="1000ms"/> '+ 'Poncho says, ' +
       forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
       assistant.tell(speechOutput);
     /*return "<speak> Hold on, I'm contacting Poncho right now for today's weather. </speak>" +
@@ -172,13 +172,10 @@ app.post('/', function (req, res) {
   // Fulfill action business logic
   function getPonchoWeather (assistant) {
     if (assistant.isPermissionGranted()) {
-      console.log("I'm in the if statement");
       let zipcode = assistant.getDeviceLocation().zipCode;
-      console.log("Zip code is: " + zipcode);
       let firebaseKey = LOCATION_DATA;
       let speechCallback = sayWeather;
       let userId = assistant.getUser().user_id;
-      console.log("User ID is: " + userId);
 
       getWeather(zipcode);
       // Save [User ID]:[{location>: <data>}] to Firebase
