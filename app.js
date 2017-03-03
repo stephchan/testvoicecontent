@@ -173,7 +173,7 @@ app.post('/', function (req, res) {
   function getPonchoWeather (assistant) {
     if (assistant.isPermissionGranted()) {
       console.log("I'm in the if statement");
-      let zipcode = assistant.getDeviceLocation().city;
+      let zipcode = assistant.getDeviceLocation().zipCode;
       console.log("Zip code is: " + zipcode);
       let firebaseKey = LOCATION_DATA;
       let speechCallback = sayWeather;
