@@ -143,12 +143,12 @@ app.post('/', function (req, res) {
 
 
   function sayWeather (forecast) {
-    forecast = forecast.replace(/(\r\n|\n|\r)/gm," ");
+    //forecast = forecast.replace(/(\r\n|\n|\r)/gm," ");
     //forecast = forecast.replace(/[0-9]F/,)
     console.log("Forecast is: " + forecast);
     let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="1s"/> ' +
       '<audio src="https://freesound.org/data/previews/110/110011_1537422-lq.mp3"></audio> ' + '<break time="1s"/> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' +
-      + forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
+      forecast + 'Remember to check in with Poncho again tomorrow. Have a great day.' + '</speak>';
       assistant.tell(speechOutput);
     /*return "<speak> Hold on, I'm contacting Poncho right now for today's weather. </speak>" +
     ""
@@ -161,7 +161,7 @@ app.post('/', function (req, res) {
   function processWeather (responseText) {
     var json_obj = JSON.parse(responseText);
     console.log(responseText);
-    var forecast = json_obj.data.body;
+    var forecast = json_obj.data.opener_f + json_obj.data.content_f;
     sayWeather (forecast);
   }
 
