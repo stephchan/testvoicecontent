@@ -40,11 +40,11 @@ const audioFileLinks = Array(
   "\"https://www.freesound.org/data/previews/346/346170_6146418-lq.mp3\""
   )
 
-var serviceAccount = require("./project-8780775258827865590-firebase-adminsdk-63asv-da6ff3dbac.json");
+var serviceAccount = require("./project--5373310688991836000-firebase-adminsdk-4lm8w-f611f53835.json");
 
 firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(serviceAccount),
-  databaseURL: "https://project-8780775258827865590.firebaseio.com"
+  databaseURL: "https://project--5373310688991836000.firebaseio.com"
 });
 
   /*function sayWeatherTest (forecast) {
@@ -151,7 +151,7 @@ app.post('/', function (req, res) {
     forecast = forecast.replace(/(\r\n|\n|\r)/gm," ");
     forecast = forecast.replace(/&/gm, "&amp;");
     //forecast = forecast.replace(/[0-9]F/,)
-    console.log("Forecast is: " + forecast);
+    //console.log("Forecast is: " + forecast);
     var audioFileLink = getAudioFileLink();
     let speechOutput = '<speak>Hold on, I\'m contacting Poncho right now for today\'s weather. <break time="1s"/> ' +
       '<audio src=' + audioFileLink + '></audio> ' + '<break time="1s"/> ' + ' ohhhhhh kay ' + '<break time="1s"/> '+ 'Poncho says, ' +
